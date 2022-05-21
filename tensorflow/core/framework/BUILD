@@ -797,6 +797,23 @@ cc_library(
     ],
 )
 
+# cc_library(
+#     name = "awftypes",
+#     hdrs = ["types.h"],
+#     srcs = [
+#         "types.cc",
+#     ],
+#     visibility = ["//visibility:public"],
+#     deps = [
+#         ":full_type_proto_cc",
+#         ":types_proto_cc",
+#         ":type_index",
+#         "//tensorflow/core/platform:platform_port",
+#         "//tensorflow/core/platform:protobuf",
+#         "//tensorflow/core/lib/core:errors",
+#     ],
+# )
+
 tf_cuda_library(
     name = "tensor",
     srcs = [

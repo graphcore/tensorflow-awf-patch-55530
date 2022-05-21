@@ -71,7 +71,7 @@ py_test(
     main = "xla_client_test.py",
     python_version = "PY3",
     srcs_version = "PY3",
-    tags = ["no_oss"],  # TODO(phawkins): This test passes, but requires --config=monolithic.
+#    tags = ["no_oss"],  # TODO(phawkins): This test passes, but requires --config=monolithic.
     deps = [
         ":custom_call_for_test",
         ":xla_client",
@@ -700,6 +700,13 @@ pybind_extension(
         "//tensorflow/compiler/xla/pjrt/distributed:client",
         "//tensorflow/compiler/xla/pjrt/distributed:service",
         "//tensorflow/core:lib",
+
+        "//tensorflow/stream_executor:stream_executor_impl",
+        "//tensorflow/core/profiler:profiler_impl",
+        "//tensorflow/core/profiler:profiler_service_proto_cc_impl",
+        "//tensorflow/core/profiler:profiler_service_monitor_result_proto_cc_impl",
+        # "//tensorflow/core/framework:awftypes",
+        
         # Do NOT remove this dependency. The XLA Python extension must not
         # depend on any part of TensorFlow at runtime, **including**
         # libtensorflow_framework.so. The XLA module is deployed self-contained
